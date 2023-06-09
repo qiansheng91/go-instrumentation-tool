@@ -1,0 +1,12 @@
+package modify_return_parameter_name
+
+import (
+	abc "fmt"
+	test "test"
+)
+
+// Original function
+func instrumentation_method(i int, b bool) (int, error) {
+	fmt.Printf("instrumentation_method: %d, %v \n", i, b)
+	return i + 1, nil
+}

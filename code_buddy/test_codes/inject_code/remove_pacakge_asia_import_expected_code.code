@@ -1,0 +1,10 @@
+package gin
+
+import (
+	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
+)
+
+func afterNewMethod(obj interface{}, variables map[string]string, parameters []interface{}, ret []interface{}) {
+	ginEngine := ret[0].(**Engine)
+	(*ginEngine).Use(otelgin.Middleware("test-server"))
+}

@@ -1,0 +1,11 @@
+plugins:
+  - package: 'github.com/qiansheng91/go-instrumentation/plugins/otel-gin-plugin'
+    path: "../../plugins/otel-gin-plugin"
+    name: "otel-gin-plugin"
+    target_packages:
+      - packagePath: 'github.com/gin-gonic/gin'
+        name: 'gin'
+        point_cuts:
+          - before_advice: 'beforeNewMethod'
+            after_advice: 'afterNewMethod'
+            target_signature: "New"

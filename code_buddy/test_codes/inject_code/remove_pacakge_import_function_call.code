@@ -1,0 +1,10 @@
+package inject_code
+
+import (
+	"fmt"
+)
+
+func instrumentation_method(i int, b bool) (int, error) {
+	fmt.Printf("instrumentation_method: %d, %v \n", i, b)
+	return i + 1, nil
+}

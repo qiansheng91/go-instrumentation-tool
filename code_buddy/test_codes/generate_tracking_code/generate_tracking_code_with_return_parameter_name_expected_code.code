@@ -1,0 +1,16 @@
+package modify_return_parameter_name
+
+import (
+	"fmt"
+)
+
+func instrumentation_method(i int, b bool) (k int, j error) {
+	beforeInstrumentationMethod([]interface{}{&i, &b})
+	defer func() {
+		afterInstrumentationMethod([]interface{}{&k, &j,
+		})
+	}()
+
+	fmt.Printf("instrumentation_method: %d, %v \n", i, b)
+	return i + 1, nil
+}

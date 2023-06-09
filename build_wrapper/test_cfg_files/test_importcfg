@@ -1,0 +1,21 @@
+# import config
+packagefile bytes=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b004/_pkg_.a
+packagefile encoding/xml=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b035/_pkg_.a
+packagefile errors=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b005/_pkg_.a
+packagefile fmt=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b037/_pkg_.a
+packagefile github.com/gin-gonic/gin/internal/bytesconv=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b135/_pkg_.a
+packagefile github.com/gin-gonic/gin/internal/json=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b136/_pkg_.a
+packagefile github.com/go-playground/validator/v10=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b137/_pkg_.a
+packagefile github.com/pelletier/go-toml/v2=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b161/_pkg_.a
+packagefile github.com/ugorji/go/codec=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b166/_pkg_.a
+packagefile google.golang.org/protobuf/proto=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b174/_pkg_.a
+packagefile gopkg.in/yaml.v3=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b188/_pkg_.a
+packagefile io=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b020/_pkg_.a
+packagefile mime/multipart=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b128/_pkg_.a
+packagefile net/http=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b056/_pkg_.a
+packagefile net/textproto=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b124/_pkg_.a
+packagefile reflect=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b032/_pkg_.a
+packagefile strconv=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b034/_pkg_.a
+packagefile strings=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b026/_pkg_.a
+packagefile sync=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b021/_pkg_.a
+packagefile time=/var/folders/bf/1scpqqd53xbdrpwvfgx960sw0000gp/T/go-build1044282794/b045/_pkg_.a
