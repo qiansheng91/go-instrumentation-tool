@@ -1,0 +1,14 @@
+#+title: How To Write A Plugin
+
+* How to write a plugin
+
+** Plugin structure
+
+The plugin contains lots of WeavePoint, a WeavePoint is an method,
+#+begin_src go
+func beforeMethod(object interface{}, parameters []interface{});
+
+func afterMethod(object interface{}, parameters []interface{}, returnValues []interface{});
+#+end_src
+
+** WeavePoint
