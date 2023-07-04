@@ -1,0 +1,19 @@
+plugins:
+  - package: 'github.com/qiansheng91/go-instrumentation-plugins/sls-tchannel-plugin'
+    name: "sls-tchannel-plugin"
+    target_packages:
+      - packagePath: 'github.com/uber/tchannel-go'
+        name: 'tchannel'
+        point_cuts:
+          - before_advice: 'beforeNewMethod'
+            after_advice: 'afterNewMethod'
+            target_signature: "NewChannel"
+  - package: 'github.com/qiansheng91/go-instrumentation-plugins/sls-gin-plugin'
+    name: "otel-gin-plugin"
+    target_packages:
+      - packagePath: 'github.com/gin-gonic/gin'
+        name: 'gin'
+        point_cuts:
+          - before_advice: 'beforeNewMethod'
+            after_advice: 'afterNewMethod'
+            target_signature: "New"
