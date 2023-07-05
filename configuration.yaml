@@ -1,5 +1,5 @@
 plugins:
-  - package: 'github.com/qiansheng91/go-instrumentation-plugins/sls-tchannel-plugin'
+  - package: 'github.com/qiansheng91/go-instrumentation-plugins/sls-tchannel-trace-plugin'
     name: "sls-tchannel-plugin"
     target_packages:
       - packagePath: 'github.com/uber/tchannel-go'
@@ -8,7 +8,7 @@ plugins:
           - before_advice: 'beforeNewMethod'
             after_advice: 'afterNewMethod'
             target_signature: "NewChannel"
-  - package: 'github.com/qiansheng91/go-instrumentation-plugins/sls-gin-plugin'
+  - package: 'github.com/qiansheng91/go-instrumentation-plugins/sls-gin-trace-plugin'
     name: "otel-gin-plugin"
     target_packages:
       - packagePath: 'github.com/gin-gonic/gin'
