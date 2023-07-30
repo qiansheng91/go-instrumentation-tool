@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TOOL_VERSION=v0.4.0
+export TOOL_VERSION=v0.5.0
 
 go install github.com/qiansheng91/go-instrumentation-tool@${TOOL_VERSION}
 
@@ -11,7 +11,7 @@ fi
 echo "back up go mod files"
 [[ -f go.mod.bak ]] && cp go.mod go.mod.bak
 [[ -f go.sum.bak ]] && cp go.sum go.sum.bak
-[[ -f addition_deps.go]] && rm addition_deps.go
+[[ -f addition_deps.go ]] && rm addition_deps.go
 
 export INSTRUMENT_CONFIG_FILE=/tmp/configuration.yaml
 
@@ -24,5 +24,5 @@ else
   echo "build package successfully"
   [[ -f go.mod.bak ]] && cp go.mod.bak go.mod && rm go.mod.bak
   [[ -f go.sum.bak ]] && cp go.sum.bak go.sum && rm go.sum.bak
-  [[ -f addition_deps.go]] && rm addition_deps.go
+  [[ -f addition_deps.go ]] && rm addition_deps.go
 fi
