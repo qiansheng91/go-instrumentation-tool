@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TOOL_VERSION=v0.5.0
+export TOOL_VERSION=v0.6.0
 
 go install github.com/qiansheng91/go-instrumentation-tool@${TOOL_VERSION}
 
