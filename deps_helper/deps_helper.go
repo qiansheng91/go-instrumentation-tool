@@ -19,10 +19,16 @@ func RewriteDeps(cfgPath string, args []string) (err error) {
 		return err
 	}
 
-	var plugins = findMatchedPlugin(instrumentationInfo.WeavePackages(), modPkg.Imports())
+	var plugins = findMatchedPlugin(instrumentationInfo.WeavePackages(), modPkg.Deps())
 	if len(plugins) < 0 {
 		log.Printf("no plugins found")
 		return nil
+	} else {
+		var matchedPlugins = make([]string, 0)
+		for _, plugin := range plugins {
+			matchedPlugins = append(matchedPlugins, plugin.PluginName())
+		}
+		log.Printf("found %d matched plugins: %v ", len(plugins), matchedPlugins)
 	}
 
 	pluginPath, _ := os.MkdirTemp("", "go-instrumentation-tool-plugin-*")
@@ -40,12 +46,10 @@ func RewriteDeps(cfgPath string, args []string) (err error) {
 	if err = modPkg.AddImports(pluginDeps); err != nil {
 		return err
 	}
-
 	if newSource, e := code_buddy.AttemptToInjectDepsImport(additionalDepsFile, additionalDepFileTemplate, pluginDeps); e != nil {
 		return e
 	} else {
 		var additionDepsFile *os.File
-
 		if additionDepsFile, err = os.Create(filepath.Join(modPath, "addition_deps.go")); err != nil {
 			log.Printf("failed to create addition_deps.go, err: %v", err)
 		}
@@ -77,6 +81,7 @@ func findMatchedPlugin(weavePkgMappings map[string]config.InjectPlugin, depPkgs 
 }
 
 func arrayDifference(a, b []string) []string {
+	log.Printf("Diff Imports:\npluginDeps: %v\nprojectDeps: %v ", a, b)
 	m := make(map[string]bool)
 	for _, item := range b {
 		m[item] = true

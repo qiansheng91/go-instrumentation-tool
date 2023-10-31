@@ -45,6 +45,16 @@ func FetchGoPackageInfo(packageName, packagePath string) (buildPackage build.Pac
 	}
 }
 
+func FetchGoPackageDeps(packageName, packagePath string) (deps []string, err error) {
+	buildCmd := []string{"list", "-f", "'{{ join .Deps \",\" }}'", packageName}
+	if o, e := execute(buildCmd, packagePath); e != nil {
+		return nil, e
+	} else {
+		deps = strings.Split(string(o), ",")
+		return deps, nil
+	}
+}
+
 // NewPackageModule initializes a new go module in the given module.
 func NewPackageModule(packageName, buildDir string) ([]byte, error) {
 	buildCmd := strings.Split(fmt.Sprintf("mod init %s", packageName), " ")
